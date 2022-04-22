@@ -1,0 +1,18 @@
+var 아이스의눈 = [];
+
+function response(room, msg, sender, isGroupChat, replier, ImageDB, packageName) {
+
+if(msg==":사과찌 키우기"){
+replier.reply(sender + "님의 사과찌 키우기를 시작합니다 ':씨앗심기'를쳐주세요*주의* 강화가 실패하면 처음부터 해야합니다");
+아이스의눈[sender] = 0;
+}
+
+if (아이스의눈[sender] == 0) {
+if(msg==":씨앗심기"){
+var a = Math.floor(Math.random()*2);
+if (a == 1) {
+아이스의눈[sender] = 1;
+replier.reply("씨앗을 무사히심었습니다 근데 사과찌를 키우려면 물이 필요 하네요? ':물 주기' 를 쳐주세요");
+} else {
+  replier.reply("다람쥐가 땅을 파고 씨앗을 가져가서 실패하셨습니다 씨앗을 다시 심어볼까요?");아이스의눈[sender] = 0;
+}
